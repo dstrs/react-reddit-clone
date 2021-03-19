@@ -20,7 +20,7 @@ const Categories = (props) => {
   useEffect(() => {
     //Fetches the posts for a given category (this.props.match.params.category)
     props.fetchPostsCategory(props.match.params.category);
-  });
+  }, []);
 
   //Dispatches deletePost action for a given postId, to delete a post.
   const deletePost = (postId) => {

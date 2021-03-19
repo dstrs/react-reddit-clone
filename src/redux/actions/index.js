@@ -61,7 +61,8 @@ export const getPostsCategory = (posts) => ({
 
 //Fetching posts for a category using thunk, then, fetching all comments for a post,
 // to display the number of comments for a post on the Category Page.
-export const fetchPostsCategory = (category) => (dispatch) =>
+export const fetchPostsCategory = (category) => (dispatch) => {
+  console.log("fetchPostsCategory");
   api
     .fetchPostsCategory(category)
     .then((posts) =>
@@ -75,6 +76,7 @@ export const fetchPostsCategory = (category) => (dispatch) =>
       )
     )
     .then((posts) => dispatch(getPostsCategory(posts)));
+};
 
 //fetching a single post
 export const receiveSinglePost = (posts) => ({
